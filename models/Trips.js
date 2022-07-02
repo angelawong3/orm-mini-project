@@ -1,3 +1,4 @@
+const { DATE } = require("sequelize");
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
@@ -19,11 +20,19 @@ Trips.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       // references the `Traveller` model's `id` field (`Traveller.id`)
+      references: {
+        model: "traveller",
+        key: "id",
+      },
     },
     location_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       // references the `Location` model's `id` field (`Location.id`)
+      references: {
+        model: "location",
+        key: "id",
+      },
     },
   },
   {
