@@ -34,4 +34,4 @@ Trips.init(
   }
 );
 
-module.exports = LocTripsation;
+module.exports = Trips;
